@@ -1,5 +1,9 @@
 # **Towards Efficient Capsule Networks**
 
+PyTorch implementation for *[Towards Efficient Capsule Networks](https://arxiv.org/abs/2208.09203)*
+
+Accepted at [ICIP 2022](https://2022.ieeeicip.org/), Special Session [SCENA](https://scena.wp.imt.fr/)
+
 **Abstract**: From the moment Neural Networks dominated the scene for image processing, the computational complexity needed to solve the targeted tasks skyrocketed: against such an unsustainable trend, many strategies have been developed, ambitiously targeting performance's preservation. Promoting sparse topologies, for example, allows the deployment of deep neural networks models on embedded resource-constrained devices. 
 Recently, Capsule Networks were introduced to enhance explainability of a model, where each capsule is an explicit representation of an object or its parts. 
 These models show promising results on toy datasets, but their low scalability prevents deployment on more complex tasks. 
