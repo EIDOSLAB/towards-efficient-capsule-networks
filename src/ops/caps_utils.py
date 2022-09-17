@@ -71,8 +71,7 @@ def dynamic_routing(num_iterations, votes, logits, routing_bias, squashing="hint
     votes_detached = votes.detach()
     # Dynamic routing core
     for it in range(num_iterations):
-        logits_r = logits.view(batch_size, output_caps_types, output_height, output_width, -1)
-        coupling_coeff = torch.softmax(logits_r, dim=-1)  # logits: [b, C, oh, ow, B, kh, kw]
+        coupling_coeff = torch.softmax(logits, dim=1)  # logits: [b, C, oh, ow, B, kh, kw]
         coupling_coeff = coupling_coeff.view(logits.size())
         if it == num_iterations-1:
             weighted_votes = votes * coupling_coeff[:, :, :, :, :, :, :, None, None]
